@@ -17,7 +17,7 @@
 	const hasSources = $derived(sources.length > 0);
 </script>
 
-<section class="prose prose-base">
+<section class="prose prose-base pb-10 border-b border-neutral-100">
 	{@html renderedContent}
 </section>
 
@@ -27,7 +27,7 @@
 		<ul class="list-inside list-disc">
 			{#each sources as { title, url }, index (index)}
 				<li>
-					<a href={url} target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">
+					<a href={url} target="_blank" rel="noopener noreferrer" class="underline">
 						{title}
 					</a>
 				</li>

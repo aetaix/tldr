@@ -21,8 +21,8 @@
 
 <main class="py-20 px-4">
 	<article class="mx-auto max-w-2xl">
-		<header class="mb-4">
-			<h1 class="text-3xl mb-2 font-bold">TL;DR</h1>
+		<header class="mb-5 border-b border-neutral-100 pb-5">
+			<h1 class="text-3xl mb-2 italic font-bold">TL;DR</h1>
 			<p class=" text-neutral-600">
 				Daily news summarized with <a
 					href="https://mistral.ai/fr/news/mistral-3"
