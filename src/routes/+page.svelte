@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Content from '$lib/components/Content.svelte';
+	import Share from '$lib/components/Share.svelte';
 	import type { PageProps } from './$types';
 
 	const { data }: PageProps = $props();
@@ -23,7 +24,7 @@
 	<article class="mx-auto max-w-2xl">
 		<header class="mb-5 border-b border-neutral-100 pb-5">
 			<h1 class="text-3xl mb-2 italic font-bold">TL;DR</h1>
-			<p class=" text-neutral-600">
+			<p class=" text-neutral-600 mb-2">
 				Daily news summarized with <a
 					href="https://mistral.ai/fr/news/mistral-3"
 					target="_blank"
@@ -35,6 +36,8 @@
 			<time class="block text-sm text-neutral-500" datetime={new Date().toISOString().split('T')[0]}
 				>Last refresh: {formattedDate}</time
 			>
+			<!-- Share -->
+			<Share />
 		</header>
 
 		{#await data.summary}
