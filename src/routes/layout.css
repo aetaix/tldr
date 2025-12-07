@@ -1,2 +1,58 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
+
+@font-face {
+	font-family: 'Playfair Display';
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+	src: url('/fonts/playfair/PlayfairDisplay-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Playfair Display';
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: italic;
+	src: url('/fonts/playfair/PlayfairDisplay-Italic.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Playfair Display';
+	font-optical-sizing: auto;
+	font-weight: 500;
+	font-style: normal;
+	src: url('/fonts/playfair/PlayfairDisplay-Medium.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Playfair Display';
+	font-optical-sizing: auto;
+	font-weight: 500;
+	font-style: italic;
+	src: url('/fonts/playfair/PlayfairDisplay-MediumItalic.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Playfair Display';
+	font-optical-sizing: auto;
+	font-weight: 700;
+	font-style: normal;
+	src: url('/fonts/playfair/PlayfairDisplay-Bold.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Playfair Display';
+	font-optical-sizing: auto;
+	font-weight: 700;
+	font-style: italic;
+	src: url('/fonts/playfair/PlayfairDisplay-BoldItalic.ttf') format('truetype');
+}
+
+@theme {
+	--font-playfair: 'Playfair Display', serif;
+}
+
+body {
+	@apply font-playfair;
+}

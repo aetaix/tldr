@@ -25,7 +25,7 @@
 	<aside class="mt-8">
 		<h2 class="mb-2 text-lg font-semibold">Sources</h2>
 		<ul class="list-inside list-disc">
-			{#each sources as { title, url }}
+			{#each sources as { title, url }, index (index)}
 				<li>
 					<a href={url} target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">
 						{title}
