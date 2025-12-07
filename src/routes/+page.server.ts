@@ -1,6 +1,6 @@
 import { mistral } from '$lib/clients/mistral';
 import { NEWS_API_KEY } from '$env/static/private';
-// export const prerender = true;
+export const prerender = true;
 
 export async function load() {  
   return {
