@@ -1,6 +1,8 @@
 {
-  "crons": [{
-    "path": "/api/rebuild",
-    "schedule": "59 8 * * *" 
-  }]
+	"crons": [
+		{
+			"path": "/api/rebuild",
+			"schedule": "59 8 * * *"
+		}
+	]
 }

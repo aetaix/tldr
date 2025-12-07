@@ -1,21 +1,37 @@
 <script lang="ts">
 	import { marked } from 'marked';
-	import type { ContentChunk } from '@mistralai/mistralai/models/components';
-	let { content }: { content: string | ContentChunk[] } = $props();
 
-	const today = new Date().toLocaleDateString('en-US', {
-		weekday: 'long',
-		year: 'numeric',
-		month: 'long',
-		day: 'numeric'
-	});
+	interface Source {
+		title: string;
+		url: string;
+	}
+
+	interface Props {
+		content: string;
+		sources: Source[];
+	}
+
+	const { content, sources }: Props = $props();
+
+	const renderedContent = $derived(marked(content));
+	const hasSources = $derived(sources.length > 0);
 </script>
 
-<div class="max-w-2xl mx-auto font-serif">
-	<h1 class="mb-4 font-bold text-2xl">TL;DR</h1>
-	<p class="mb-4 block">{today}</p>
+<section class="prose prose-base">
+	{@html renderedContent}
+</section>
 
-	<div class="prose prose-base">
-		{@html marked(typeof content === 'string' ? content : JSON.stringify(content))}
-	</div>
-</div>
+{#if hasSources}
+	<aside class="mt-8">
+		<h2 class="mb-2 text-lg font-semibold">Sources</h2>
+		<ul class="list-inside list-disc">
+			{#each sources as { title, url }}
+				<li>
+					<a href={url} target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">
+						{title}
+					</a>
+				</li>
+			{/each}
+		</ul>
+	</aside>
+{/if}
