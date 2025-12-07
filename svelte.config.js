@@ -13,7 +13,7 @@ const config = {
 		// See https://svelte.dev/docs/kit/adapters for more information about adapters.
 		adapter: adapter({
 			isr: {
-				expiration: 3600 // 1 hour
+				expiration: 120 // 2 minutes
 			}
 		})
 	}
