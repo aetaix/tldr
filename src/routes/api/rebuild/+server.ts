@@ -1,5 +1,7 @@
+import { CRON_SECRET } from "$env/static/private";
+
 export function GET(req: Request) {
-	if (req.headers.get('Authorization') !== `Bearer ${process.env.CRON_SECRET}`) {
+	if (req.headers.get('Authorization') !== `Bearer ${CRON_SECRET}`) {
 		return new Response('Unauthorized', { status: 401 });
 	}
 	fetch(
